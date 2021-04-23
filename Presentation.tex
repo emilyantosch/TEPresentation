@@ -1,0 +1,213 @@
+\documentclass[usenames,dvipsnames,10pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{tikz}
+
+%%%----------%%%----------%%%----------%%%----------%%%
+\usepackage{listings}
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*}
+}
+
+%%%----------%%%----------%%%----------%%%----------%%%
+\title{Robotics - Are you going to be replaced?}
+\date[ISPN ’80]{TE - \today}
+\author{Eric Antosch}
+
+\usetheme{hawsx}
+\setbeamertemplate{section in toc}{%
+  
+      \begin{tikzpicture}
+        
+        \fill[color=UmUBlue] (1,1) circle (0.2cm);
+        \node[anchor=center] (xlab) at (1,1) {\color{white}\inserttocsectionnumber};
+        \node[anchor=west] (ylab) at (1.2,0.97) {\color{UmUBlue}\sffamily\textsf{\inserttocsection}};
+      \end{tikzpicture}
+  }
+
+
+\begin{document}
+    
+    \begin{frame}
+        \titlepage
+    \end{frame}    
+    \begin{frame}{Table of Contents}
+        \tableofcontents
+    \end{frame}
+    \section{What is Robotics?}
+    \framepic{Idee.jpg}{
+        %\framefill
+        \textcolor{white}{What is Robotics?}
+        \vskip 0.5cm
+    }
+    \begin{frame}{Definition}
+        \begin{block}{Definition}
+            
+        \end{block}
+    \end{frame}
+    \section{A brief history}
+    
+    \framepic{Idee.jpg}{
+        %\framefill
+        \textcolor{white}{A brief history}
+        \vskip 0.5cm
+    }
+    \begin{frame}{A brief history}
+        \begin{block}{Important facts}
+            \begin{itemize}
+                \item was Funktionen sind und wie man sie definiert,
+                \pause
+                \item was Headerdateien sind, welche es gibt und wie man eigene erstellt,
+                \pause
+                \item wo der Unterschied zwischen Call-By-Value und Call-By-Reference ist
+                \pause
+                \item und was Rekursion ist und wie man diese erstellt.
+            \end{itemize}
+        \end{block}
+    \end{frame}
+
+    \section{Overview}
+    \subsection{Types}
+    \framepic{Idee.jpg}{
+        %\framefill
+        \textcolor{white}{Overview: Types}
+        \vskip 0.5cm
+    }
+    \subsection{Uses}
+    \framepic{Idee.jpg}{
+	%\framefill
+    \textcolor{white}{Overview: Uses}
+    \vskip 0.5cm
+    }
+
+    \begin{frame}{Overview}{Types}
+        \begin{block}{Was ist eine Funktion?}
+            Eine Funktion ist ein Block von Code, der durch einen Aufruf ausgeführt werden kann. Dabei besteht jede Funktion aus einem 
+            Funktionskopf und einem Funktionskörper. Im Funktionskopf wird der Name, der Typ des Rückgabewerts und die Parameter festgelegt, während
+            im Funktionskörper der eigentliche Code vorgefunden werden kann.
+        \end{block}
+    \end{frame}
+    \begin{frame}{Overview}{Uses}
+        \begin{block}{Prototypen}
+            Es ist ratsam, alle Funktionen in dem eigenen Code direkt unter den Includes und den Präprozessordirektiven mithilfe von Prototypen
+            zu beschreiben. Der Prototyp ist im Prinzip nur der Funktionskopf ohne Funktionskörper.
+        \end{block}
+    \end{frame}
+    \subsection{Technical}
+    \begin{frame}{Overview}{Technical}
+        \begin{block}{Was sind Headerdateien?}
+            Headerdateien sind der zweite Dateientyp neben *.c-Dateien, die ansich
+            jedoch keinen C-Code enthalten. Sie enthalten lediglich die Informationen über tatsächliche
+            C-Dateien, sodass sie in den eigenen Code eingebunden werden können.
+        \end{block}
+    \end{frame}
+
+    \subsection{Economy}
+    \begin{frame}{Overview}{Economy}
+        \begin{block}{Call-By-Value}
+            Der Aufruf einer Funktion mit Parametern, die Variablen
+            darstellen. Die Werte werden in der Funktion zur Verarbeitung 
+            von Anweisungen und Informationen genutzt.
+        \end{block}
+    \end{frame}
+
+    \framepic{Idee.jpg}{
+        %\framefill
+        \textcolor{white}{Ethical Implications}
+        \vskip 0.5cm
+    }
+    \section{Ethical Implications}
+    \begin{frame}{Ethical Implications}{Relationships}
+        \begin{block}{Was ist Rekursion?}
+            Als eine rekursive Funktion bezeichnet man eine Funktion, die sich in ihrer Ausführung selbst aufruft.
+            Man kann solche Funktionen gut mit rekursiven Folgen vergleichen. Das nächste Folgenglied ist hierbei abhängig von 
+            den vorherigen Ergebnissen der Folge. Ein Anfang wird dabei meist als gegeben angenommen.
+        \end{block}
+    \end{frame}
+    \begin{frame}{Ethical Implications}{Society}
+        \begin{block}{Stack}
+            Zu beachten bei dem Erstellen von rekursiven Funktionen ist, dass ein sogenannter Stack existiert. Ruft eine Funktion sich selbst auf,
+            dann wird zuerst die zuletzt aufgerufene Funktion bis zum Schluss ausgeführt. Nach dem Ende dieser Funktion, springt das Programm zurück 
+            in die Funktion, die die gerade beendete Funktion aufgerufen hat. Rekursion ist also nicht einfach nur eine andere Form von Iteration.
+        \end{block}
+    \end{frame}
+    \begin{frame}{Ethical Implications}{Responsibility}
+        
+    \end{frame}
+
+
+    \section{Article}
+
+    \framepic{Idee.jpg}{
+        %\framefill
+        \textcolor{white}{Fragen?}
+        \vskip 0.5cm
+    }
+
+
+    \section{Discussion}
+
+    \begin{frame}{Discussion}
+        \begin{exampleblock}{Key Questions}
+            \begin{itemize}
+                \item About what part of the future of robotics are you most excited about?
+                \item Would you consider buying a robotic pet if it were indifferentiable from a normal one?
+                \item In what part of society do robots belong? Does that social standing change with appearance or skill set?
+                \item Is it possible for humans to become obsolete because of robotics?
+                \item Are you going to be replaced?
+            \end{itemize}
+        \end{exampleblock}
+    \end{frame}
+    
+    
+    \section{Conclusion, Questions, Feedback}
+    
+    
+    \framepic{Idee.jpg}{
+        %\framefill
+        \textcolor{white}{Conclusion}
+        \vskip 0.5cm
+    }
+
+    \framepic{Idee.jpg}{
+        %\framefill
+        \textcolor{white}{Questions?}
+        \vskip 0.5cm
+    }
+
+    \framepic{Idee.jpg}{
+        %\framefill
+        \textcolor{white}{Feedback}
+        \vskip 0.5cm
+    }
+
+    \framepic{Idee.jpg}{
+        %\framefill
+        \textcolor{white}{Thank you!}
+        \vskip 0.5cm
+    }
+    
+
+\end{document}
